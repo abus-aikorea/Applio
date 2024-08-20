@@ -308,7 +308,7 @@ def train_tab():
             label=i18n("Sampling Rate"),
             info=i18n("The sampling rate of the audio files."),
             choices=["32000", "40000", "48000"],
-            value="40000",
+            value="48000",
             interactive=True,
         )
         rvc_version = gr.Radio(
@@ -533,7 +533,7 @@ def train_tab():
         with gr.Row():
             batch_size = gr.Slider(
                 1,
-                50,
+                100,
                 max_vram_gpu(0),
                 step=1,
                 label=i18n("Batch Size"),
@@ -544,8 +544,8 @@ def train_tab():
             )
             save_every_epoch = gr.Slider(
                 1,
-                100,
-                10,
+                1000,
+                50,
                 step=1,
                 label=i18n("Save Every Epoch"),
                 info=i18n("Determine at how many epochs the model will saved at."),
@@ -553,8 +553,8 @@ def train_tab():
             )
             total_epoch = gr.Slider(
                 1,
-                10000,
-                500,
+                100000,
+                1000,
                 step=1,
                 label=i18n("Total Epoch"),
                 info=i18n(
@@ -570,7 +570,7 @@ def train_tab():
                         info=i18n(
                             "Enabling this setting will result in the G and D files saving only their most recent versions, effectively conserving storage space."
                         ),
-                        value=False,
+                        value=True,
                         interactive=True,
                     )
                     save_every_weights = gr.Checkbox(
@@ -578,7 +578,7 @@ def train_tab():
                         info=i18n(
                             "This setting enables you to save the weights of the model at the conclusion of each epoch."
                         ),
-                        value=True,
+                        value=False,
                         interactive=True,
                     )
                     pretrained = gr.Checkbox(

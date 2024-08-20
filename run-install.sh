@@ -1,7 +1,7 @@
 #!/bin/sh
 printf "\033]0;Installer\007"
 clear
-rm *.bat
+# rm *.bat
 
 # Function to create or activate a virtual environment
 prepare_install() {

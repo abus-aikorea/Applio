@@ -9,10 +9,10 @@ set "INSTALL_ENV_DIR=%principal%\env"
 set "MINICONDA_DOWNLOAD_URL=https://repo.anaconda.com/miniconda/Miniconda3-py39_23.9.0-0-Windows-x86_64.exe"
 set "CONDA_EXECUTABLE=%CONDA_ROOT_PREFIX%\Scripts\conda.exe"
 
-del Makefile
-del Dockerfile
-del docker-compose.yaml
-del /q *.sh
+@REM del Makefile
+@REM del Dockerfile
+@REM del docker-compose.yaml
+@REM del /q *.sh
 
 if not exist "%cd%\env.zip" (
     echo Downloading the fairseq build...
